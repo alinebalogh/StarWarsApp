@@ -1,0 +1,21 @@
+//COLORS
+
+$primary-color: #091F40;
+$secondary-color: #627085;
+$tertiary-color: #00A5CF;
+
+$light-primary-color: rgba($primary-color, 0.5);
+
+$white: #FFFFFF;
+$off-white: #F8F9EB;
+
+$black: #000;
+$gray: #7F7F7F;
+$light-gray: lighten($gray, 45%) !default;
+$dark-gray: darken($gray, 23%) !default;
+$darker-gray: darken($gray, 43%) !default;
+$darkest-gray: darken($gray, 63%) !default;
+
+//GRADIENTS
+
+$nav-gradient: linear-gradient(to bottom right, $primary-color, $secondary-color);

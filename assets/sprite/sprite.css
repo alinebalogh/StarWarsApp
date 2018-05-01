@@ -1,0 +1,11 @@
+.icon {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-image: url(sprite.svg);
+}
+.icon-search {
+  width: 25px;
+  height: 25px;
+  background-position: 0 0;
+}
+

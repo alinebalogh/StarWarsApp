@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,900");
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+ORDER: Base + typography > general layout + grid > page layout > components
+1em = 16px
+*/
+*,
+*:after,
+*:before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+
+body {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  margin: 0 auto;
+  background-color: #FFF; }
+
+a {
+  text-decoration: none; }
+
+ul {
+  list-style: none; }
+
+input[type=checkbox] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px; }
+
+.searchbar {
+  padding: 1rem 3rem;
+  width: 100vw;
+  background: #091F40;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  color: #444444; }
+  .searchbar__input {
+    position: relative;
+    font-size: 1.6rem;
+    margin: 0 auto;
+    padding: 5px 32px 5px 8px;
+    width: 50%;
+    height: 3.5rem;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    color: #444444;
+    position: relative; }
+    @media only screen and (max-width: 56.25em) {
+      .searchbar__input {
+        width: 80%; } }
+  .searchbar__input:focus {
+    outline: none;
+    border-bottom: 1px #091F40; }
+  .searchbar__input::-webkit-input-placeholder {
+    color: #7F7F7F; }
+  .searchbar svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: #7F7F7F; }
+  .searchbar span {
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    transform: translate(0, -50%); }
+  .searchbar__list-group {
+    position: absolute;
+    top: 4.774rem;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 45%; }
+  .searchbar__list-item {
+    cursor: pointer;
+    color: currentColor;
+    font-size: 1.6rem;
+    text-align: left;
+    margin: 1px;
+    border-bottom: 0.5px solid rgba(9, 31, 64, 0.5);
+    padding: 1rem 2rem;
+    background: #FFFFFF; }
+
+.list {
+  overflow: hidden;
+  margin-top: 5%;
+  width: 100vw;
+  display: flex;
+  justify-content: center; }
+  .list__group {
+    display: flex;
+    flex-direction: column;
+    width: 80%; }
+  .list__item {
+    overflow: hidden;
+    padding: 1rem 3rem;
+    padding-right: 40px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: rgba(9, 31, 64, 0.5);
+    margin: .5rem 0;
+    box-shadow: 0 0 0 0.1px rgba(9, 31, 64, 0.5); }
+    @media only screen and (max-width: 56.25em) {
+      .list__item {
+        padding: 1rem 1rem; } }
+    .list__item-hide {
+      display: none; }
+  .list__link {
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-content: center;
+    transform: translateX(-100px);
+    animation: goRight 0.5s cubic-bezier(0.38, 0.14, 0.17, 1.58) forwards; }
+  .list__icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    fill: #00A5CF;
+    transition: all .2s ease-in; }
+  .list__icon-arrow:before {
+    display: inline-block;
+    content: " Back ";
+    color: #00A5CF;
+    font-weight: 300;
+    font-size: 1.5rem;
+    opacity: 0;
+    margin-right: 1.5rem;
+    transform: translateX(-15px);
+    transition: all .2s ease-in-out; }
+  .list__hidden {
+    display: none; }
+  input[type=checkbox]:checked ~ .list__hidden {
+    display: block; }
+  input[type=checkbox]:checked ~ label .list__title {
+    opacity: 0; }
+  input[type=checkbox]:checked ~ label .list__icon {
+    transform: rotate(180deg); }
+  input[type=checkbox]:checked ~ label .list__icon-arrow:before {
+    opacity: 1;
+    transform: translateX(0); }
+
+@keyframes goRight {
+  to {
+    transform: translateX(0); } }
+
+.detail {
+  margin: 30px 20px;
+  height: 80vh;
+  color: rgba(9, 31, 64, 0.5);
+  font-weight: 300; }
+  .detail__title-wrap, .detail__text {
+    margin-bottom: 3rem; }
+  .detail__title {
+    font-size: 2.8rem;
+    font-weight: 400;
+    color: #00A5CF; }
+  .detail__subtitle {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 10px; }
+  .detail__subtext {
+    font-size: 1.5rem; }
+  .detail__text {
+    font-size: 1.7rem; }

@@ -1,0 +1,88 @@
+.list{
+    overflow: hidden;
+    margin-top: 5%;
+    width: 100vw; 
+    display: flex; 
+    justify-content: center; 
+    
+
+    &__group{
+        
+        display: flex;  
+        flex-direction: column;    
+        width: 80%;    
+        @include respond(tab-port) { // width < 900?
+            // flex-direction: column;
+        }
+    }
+    &__item{
+        overflow: hidden;
+        padding: 1rem 3rem;
+        padding-right: 40px; 
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: $light-primary-color;
+        margin: .5rem 0;
+        box-shadow: 0 0 0 .1px $light-primary-color; //0 0 20px 0 $light-gray;
+        @include respond(tab-port) { // width < 900?
+            padding: 1rem 1rem;
+        }
+
+        &-hide{
+            display: none;
+        }
+    }
+    &__link{
+        display: flex;
+        cursor: pointer;
+        justify-content: space-between;
+        align-content: center;
+        transform: translateX(-100px);
+        animation: goRight .5s cubic-bezier(0.38, 0.14, 0.17, 1.58) forwards;
+    }
+    &__icon{
+        width: 1.8rem;
+        height: 1.8rem;
+        fill: $tertiary-color;
+        transition: all .2s ease-in;
+    }
+    &__icon-arrow{
+        &:before{
+            
+            display: inline-block;
+            content: " Back ";
+            color: $tertiary-color;
+            font-weight: 300;
+            font-size: 1.5rem;
+            opacity: 0;
+            margin-right: 1.5rem;
+            transform: translateX(-15px);
+            transition: all .2s ease-in-out;
+        }
+    }
+    &__hidden{
+        display: none;
+    }
+
+
+    input[type=checkbox]:checked ~ &__hidden {
+        display: block;
+    }
+    input[type=checkbox]:checked ~ label &__title{
+        opacity: 0;
+    }
+    input[type=checkbox]:checked ~ label &__icon {
+        transform: rotate(180deg);
+    }
+    input[type=checkbox]:checked ~ label &__icon-arrow:before {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes goRight{
+    to{
+        transform: translateX(0);
+    }
+}
