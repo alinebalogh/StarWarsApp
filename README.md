@@ -8,4 +8,4 @@ This project read an SWAPI API and render a Star Wars movie list with some detai
 > npm start
 
 
-###Built with React and Redux
+### Built with React and Redux
