@@ -1,6 +1,6 @@
 # Star Wars API client
 
-This project read an SWAPI API and render a Star Wars movie list with some details.
+This project reads an SWAPI API and render a Star Wars movie list with some details.
 
 ### Getting Started
 
